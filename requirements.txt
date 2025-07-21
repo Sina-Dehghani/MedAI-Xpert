@@ -1,2 +1,9 @@
 python-dotenv
 PyYAML
+pydicom
+pandas
+numpy
+torch
+torchvision
+# For XAI:
+# captum # (Uncomment if you integrate real XAI methods)
