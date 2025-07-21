@@ -152,7 +152,6 @@ class ImageDetector(ExplainableBaseModel):
 
 
 if __name__ == "__main__":
-    # Example Usage:
     import numpy as np
 
     setup_logging()

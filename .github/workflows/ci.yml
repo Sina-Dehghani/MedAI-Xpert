@@ -1,0 +1,49 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        # Install torch_geometric dependencies specifically for CI
+        pip install torch_sparse torch_scatter torch_cluster torch_spline_conv torch_geometric -f https://data.pyg.org/whl/torch-2.3.0+cpu.html
+
+    - name: Run linting (Flake8)
+      run: |
+        pip install flake8
+        flake8 src/
+
+    - name: Run Black formatter check
+      run: |
+        pip install black
+        black --check src/
+
+    - name: Run unit tests
+      run: |
+        pytest src/tests/unit/
+
+    - name: Build Docker image (optional, for validation)
+      run: |
+        docker build -t medipredict-cdss:latest .

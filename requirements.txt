@@ -7,3 +7,19 @@ torch
 torchvision
 # For XAI:
 # captum # (Uncomment if you integrate real XAI methods)
+transformers
+torch_geometric
+# Install torch_geometric dependencies:
+# pip install torch_sparse torch_scatter torch_cluster torch_spline_conv torch_geometric -f https://data.pyg.org/whl/torch-${TORCH_VERSION}.html
+# Replace ${TORCH_VERSION} with your PyTorch version, e.g., 2.3.0
+fastapi
+uvicorn
+pydantic
+
+pillow # For image processing in prediction service
+pytest
+
+# Code Quality & Formatting
+flake8
+black
+isort
