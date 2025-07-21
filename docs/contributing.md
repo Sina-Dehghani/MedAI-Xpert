@@ -5,7 +5,6 @@ We welcome contributions to MedAI-Xpert! Your insights and improvements are valu
 ## Table of Contents
 
 * [How to Contribute](#how-to-contribute)
-* [Code of Conduct](#code-of-conduct)
 * [Setting Up Your Development Environment](#setting-up-your-development-environment)
 * [Coding Style and Standards](#coding-style-and-standards)
 * [Commit Messages](#commit-messages)
@@ -26,9 +25,6 @@ We welcome contributions to MedAI-Xpert! Your insights and improvements are valu
 8.  **Push your branch** to your forked repository.
 9.  **Open a Pull Request** against the `develop` branch of the main `MedAI-Xpert` repository.
 
-## Code of Conduct
-
-Please review our [Code of Conduct](CODE_OF_CONDUCT.md - create this optionally if desired). We are committed to fostering an open and welcoming environment.
 
 ## Setting Up Your Development Environment
 
