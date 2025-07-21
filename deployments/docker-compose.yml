@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./models:/app/models # Mount models directory
+      - ./data/raw:/app/data/raw # Mount raw data if needed by ETL within container
+      - ./data/processed:/app/data/processed # Mount processed data
+    environment:
+      # Pass environment variables to the container
+      - APP_NAME=MediPredict-CDSS
+      - API_VERSION=v1
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=postgresql://user:password@db:5432/medipredict_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - IMAGE_MODEL_PATH=/app/models/test_image_detector.pth
+      - NLP_MODEL_PATH=/app/models/test_text_classifier # HF model path is a directory
+    depends_on:
+      - db
+      - redis
+    command: ["uvicorn", "src.apis.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: medipredict_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  db_data:
