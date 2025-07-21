@@ -15,4 +15,11 @@ torch_geometric
 fastapi
 uvicorn
 pydantic
+
 pillow # For image processing in prediction service
+pytest
+
+# Code Quality & Formatting
+flake8
+black
+isort
