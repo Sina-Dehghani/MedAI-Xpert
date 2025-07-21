@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.manifest
+*.spec
+*.log
+*.tmp
+*.sqlite3
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+
+# Pylint
+.pylint.d/
+
+# VSCode settings
+.vscode/
+
+# JetBrains (PyCharm, IntelliJ, etc.)
+.idea/
+*.iml
