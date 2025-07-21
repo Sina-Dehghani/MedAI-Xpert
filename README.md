@@ -14,7 +14,7 @@ Our mission is to empower healthcare professionals with intelligent, interpretab
 * **Personalized Risk Stratification:** Leverages sophisticated predictive models and Graph Neural Networks (GNNs) to model complex disease-symptom-treatment relationships, identify high-risk patients, and suggest related conditions or interventions.
 * **Explainable AI (XAI):** Incorporates conceptual interpretability techniques (e.g., Grad-CAM for vision, conceptual LIME/SHAP for NLP) to provide transparent insights into model predictions, fostering trust and clinical adoption.
 * **Scalable & Robust Architecture:** Built on a modular, microservices-oriented architecture with strong adherence to SOLID principles and common design patterns (e.g., Factory, Facade, Strategy, Template Method) for high maintainability and extensibility.
-* **Comprehensive MLOps Pipeline:** Implements continuous integration (CI) and continuous deployment (CD) workflows, emphasizing experiment tracking, model versioning, and rigorous testing for reliable and reproducible AI system deployment.
+* **Comprehensive MLOps Pipeline:** Implements continuous integration (CI) and continuous deployment (CD) workflows, emphasizing rigorous testing for reliable and reproducible AI system deployment.
 
 ## Architecture
 
@@ -23,15 +23,16 @@ MedAI-Xpert is designed with a scalable microservices architecture to handle the
 ## Technologies Used
 
 * **Languages:** Python
-* **Deep Learning Frameworks:** PyTorch, TensorFlow
-* **Machine Learning Libraries:** Scikit-learn, NLTK, Hugging Face Transformers, FAISS, OpenCV, YOLO, Pandas, Polars, NumPy, Matplotlib
-* **Databases:** MySQL, PostgreSQL, Cassandra, Redis (Conceptual Integration)
-* **Big Data:** Hadoop, Apache Spark (Conceptual Integration)
+* **Deep Learning Frameworks:** PyTorch, TensorFlow (for conceptual models if integrated, PyTorch is primary)
+* **Machine Learning Libraries:** Scikit-learn (conceptual for general ML tasks), NLTK, Hugging Face Transformers, FAISS (conceptual for retrieval), OpenCV (for image processing), Pandas, NumPy, Matplotlib (for visualization)
+* **Databases:** PostgreSQL, Redis (for Dockerized local setup)
 * **Containerization:** Docker
 * **Version Control:** Git
-* **API:** FastAPI
-* **MLOps:** MLflow / Weights & Biases (Conceptual), DVC (Data Version Control - Conceptual)
-* **Explainable AI:** Captum (Conceptual for XAI methods)
+* **API:** FastAPI, Uvicorn, Pydantic
+* **Testing:** Pytest
+* **Code Quality:** Flake8, Black, Isort
+* **Data Handling:** PyYAML, Python-dotenv
+* **Image Processing:** Pillow
 * **Graph Neural Networks:** PyTorch Geometric
 
 ## Setup and Installation
